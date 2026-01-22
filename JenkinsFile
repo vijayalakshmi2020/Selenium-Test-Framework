@@ -1,7 +1,9 @@
 pipeline {
     agent any 
-
-    stages {
+tools {
+        maven 'MAVEN_HOME' 
+    }
+   stages {
         stage('Checkout') {
             steps {
                 // Pulls the code into the Jenkins workspace

@@ -1,6 +1,8 @@
 pipeline {
     agent any 
-
+        tools {
+        maven 'MAVEN_HOME' // This must match the name you gave in Tools
+    }
     stages {
         stage('Checkout') {
             steps {
