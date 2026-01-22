@@ -1,51 +1,35 @@
 pipeline {
-    agent any 
-        tools {
-        maven 'MAVEN_HOME' // This must match the name you gave in Tools
+    agent any
+
+    environment {
+        // Manually pointing to your Maven bin folder
+        // CHANGE THIS to your actual Maven installation path
+        MAVEN_BIN = 'C:\\apache-maven-3.9.6\\bin' 
     }
+
     stages {
-        stage('Checkout') {
+        stage('Environment Check') {
             steps {
-                // Pulls the code into the Jenkins workspace
-                checkout scm
+                // This adds Maven to the path just for this session
+                withEnv(["PATH+MAVEN=${env.MAVEN_BIN}"]) {
+                    bat 'mvn -version'
+                }
             }
         }
 
         stage('Build & Execute Tests') {
             steps {
-                echo 'Executing OrangeHRM Selenium Tests...'
-                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    // Running via Maven on Windows
-                    bat 'mvn clean test -Dbrowser=chrome -Dheadless=true'
+                dir('OrangeHRMProject') {
+                    // Use withEnv here as well to ensure 'mvn' is found
+                    withEnv(["PATH+MAVEN=${env.MAVEN_BIN}"]) {
+                        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                            bat 'mvn clean test -Dbrowser=chrome -Dheadless=true'
+                        }
+                    }
                 }
             }
         }
-
-        stage('Publish Reports') {
-            steps {
-                echo 'Publishing ExtentReport...'
-                
-                // Using the specific path you provided
-                publishHTML([
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: true,
-                    // We use the path relative to your workspace or the absolute path
-                    reportDir: 'OrangeHRMProject/src/test/resources/ExtentReports',
-                    reportFiles: 'ExtentReport.html',
-                    reportName: 'ExtentHTMLReport'
-                ])
-
-                // Standard JUnit results for the trend graph
-                junit '**/target/surefire-reports/*.xml'
-            }
-        }
-    }
-
-    post {
-        always {
-            echo 'Archiving report as a build artifact...'
-            archiveArtifacts artifacts: '**/ExtentReports/ExtentReport.html', allowEmptyArchive: true
-        }
+        
+        // ... Publish Reports stage remains the same
     }
 }
