@@ -1,0 +1,49 @@
+pipeline {
+    agent any 
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Pulls the code into the Jenkins workspace
+                checkout scm
+            }
+        }
+
+        stage('Build & Execute Tests') {
+            steps {
+                echo 'Executing OrangeHRM Selenium Tests...'
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    // Running via Maven on Windows
+                    bat 'mvn clean test -Dbrowser=chrome -Dheadless=true'
+                }
+            }
+        }
+
+        stage('Publish Reports') {
+            steps {
+                echo 'Publishing ExtentReport...'
+                
+                // Using the specific path you provided
+                publishHTML([
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    // We use the path relative to your workspace or the absolute path
+                    reportDir: 'OrangeHRMProject/src/test/resources/ExtentReports',
+                    reportFiles: 'ExtentReport.html',
+                    reportName: 'ExtentHTMLReport'
+                ])
+
+                // Standard JUnit results for the trend graph
+                junit '**/target/surefire-reports/*.xml'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Archiving report as a build artifact...'
+            archiveArtifacts artifacts: '**/ExtentReports/ExtentReport.html', allowEmptyArchive: true
+        }
+    }
+}

@@ -27,15 +27,6 @@ bin/
 *.swp
 *~.nib
 local.properties
-
-# --- Test Reports (Keep the code, ignore the results) ---
-test-output/
-test-output-report/
-ExtentReports/
-screenshots/
-logs/
-*.log
-
 # --- OS Specific ---
 .DS_Store
 Thumbs.db
