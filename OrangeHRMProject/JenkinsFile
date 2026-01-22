@@ -1,35 +1,59 @@
 pipeline {
     agent any
 
-    environment {
-        // Manually pointing to your Maven bin folder
-        // CHANGE THIS to your actual Maven installation path
-        MAVEN_BIN = 'C:\\apache-maven-3.9.6\\bin' 
-    }
-
     stages {
-        stage('Environment Check') {
+        stage('Checkout') {
             steps {
-                // This adds Maven to the path just for this session
-                withEnv(["PATH+MAVEN=${env.MAVEN_BIN}"]) {
-                    bat 'mvn -version'
-                }
+                // Pulls your code from GitHub
+                checkout scm
             }
         }
 
-        stage('Build & Execute Tests') {
+        stage('Execute OrangeHRM Tests') {
             steps {
+                echo 'Navigating to OrangeHRMProject and running Maven...'
+                
+                // 1. Move into the folder where your pom.xml is located
                 dir('OrangeHRMProject') {
-                    // Use withEnv here as well to ensure 'mvn' is found
-                    withEnv(["PATH+MAVEN=${env.MAVEN_BIN}"]) {
+                    script {
+                        // 2. Define the absolute path to your maven executable
+                        def mavenPath = 'C:\\apache-maven-3.9.12\\bin\\mvn.cmd'
+                        
+                        // 3. Run the test command
                         catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                            bat 'mvn clean test -Dbrowser=chrome -Dheadless=true'
+                            bat "${mavenPath} clean test -Dbrowser=chrome -Dheadless=true"
                         }
                     }
                 }
             }
         }
-        
-        // ... Publish Reports stage remains the same
+
+        stage('Publish Reports') {
+            steps {
+                echo 'Generating Extent and JUnit Reports...'
+                
+                // Publish the ExtentReport.html from your specific path
+                publishHTML([
+                    allowMissing: true,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: 'OrangeHRMProject/src/test/resources/ExtentReports',
+                    reportFiles: 'ExtentReport.html',
+                    reportName: 'OrangeHRM Extent Report'
+                ])
+
+                // Publish JUnit results for Jenkins trend graphs
+                dir('OrangeHRMProject') {
+                    junit '**/target/surefire-reports/*.xml'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Archiving report as a build artifact...'
+            archiveArtifacts artifacts: '**/ExtentReports/ExtentReport.html', allowEmptyArchive: true
+        }
     }
 }
