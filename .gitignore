@@ -1,0 +1,41 @@
+.metadata/
+.recommenders/
+RemoteSystemsTempFiles/
+bin/
+target/
+test-output/
+.settings/
+.project
+.classpath
+# --- Maven ---
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# --- Eclipse ---
+.settings/
+.project
+.classpath
+.factorypath
+.metadata/
+bin/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+
+# --- Test Reports (Keep the code, ignore the results) ---
+test-output/
+test-output-report/
+ExtentReports/
+screenshots/
+logs/
+*.log
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
