@@ -1,0 +1,75 @@
+2026-01-22 14:16:10 INFO  BaseClass - Properties File loaded
+2026-01-22 14:16:18 INFO  BaseClass - ChromeDriver Instance is created
+2026-01-22 14:16:23 INFO  BaseClass - WebDriver initialised and Browser window maximised
+2026-01-22 14:16:23 TRACE BaseClass - This is Trace Message
+2026-01-22 14:16:23 DEBUG BaseClass - This is Debug Message
+2026-01-22 14:16:23 WARN  BaseClass - This is a Warning mesage
+2026-01-22 14:16:23 INFO  BaseClass - WebDriver Instance is Created
+2026-01-22 14:16:23 INFO  BaseClass - Action Driver initialised for Thread28
+2026-01-22 14:16:23 INFO  BaseClass - Applied the border with colorgreento elementElement with name:username
+2026-01-22 14:16:23 INFO  BaseClass - Applied the border with colorgreento elementElement with name:username
+2026-01-22 14:16:24 INFO  BaseClass - Entered the element: Element with name:username orangehrm_dbtesting
+2026-01-22 14:16:24 INFO  BaseClass - Applied the border with colorgreento elementElement with name:password
+2026-01-22 14:16:24 INFO  BaseClass - Applied the border with colorgreento elementElement with name:password
+2026-01-22 14:16:24 INFO  BaseClass - Entered the element: Element with name:password DBtesting@123
+2026-01-22 14:16:25 INFO  BaseClass - Applied the border with colorgreento elementElement with text:Login
+2026-01-22 14:16:25 INFO  BaseClass - Applied the border with colorgreento elementElement with text:Login
+2026-01-22 14:16:29 INFO  BaseClass - Element is clicked-->Element with text:Login
+2026-01-22 14:16:49 INFO  BaseClass - Applied the border with colorgreento elementElement with alt:client brand banner
+2026-01-22 14:16:50 INFO  BaseClass - Applied the border with colorgreento elementElement with class:oxd-icon bi-caret-down-fill oxd-userdropdown-icon
+2026-01-22 14:16:50 INFO  BaseClass - Applied the border with colorgreento elementElement with class:oxd-icon bi-caret-down-fill oxd-userdropdown-icon
+2026-01-22 14:16:50 INFO  BaseClass - Element is clicked-->Element with class:oxd-icon bi-caret-down-fill oxd-userdropdown-icon
+2026-01-22 14:16:50 INFO  BaseClass - Applied the border with colorgreento elementElement with text:Logout
+2026-01-22 14:16:50 INFO  BaseClass - Applied the border with colorgreento elementElement with text:Logout
+2026-01-22 14:16:52 INFO  BaseClass - Element is clicked-->Element with text:Logout
+2026-01-22 14:16:53 INFO  BaseClass - Closing WebDriver Instance for Thread: 28
+2026-01-22 14:21:36 INFO  BaseClass - Properties File loaded
+2026-01-22 14:21:40 INFO  BaseClass - ChromeDriver Instance is created
+2026-01-22 14:21:43 INFO  BaseClass - WebDriver initialised and Browser window maximised
+2026-01-22 14:21:43 TRACE BaseClass - This is Trace Message
+2026-01-22 14:21:43 DEBUG BaseClass - This is Debug Message
+2026-01-22 14:21:43 WARN  BaseClass - This is a Warning mesage
+2026-01-22 14:21:43 INFO  BaseClass - WebDriver Instance is Created
+2026-01-22 14:21:43 INFO  BaseClass - Action Driver initialised for Thread28
+2026-01-22 14:21:43 INFO  BaseClass - Applied the border with colorgreento elementElement with name:username
+2026-01-22 14:21:43 INFO  BaseClass - Applied the border with colorgreento elementElement with name:username
+2026-01-22 14:21:44 INFO  BaseClass - Entered the element: Element with name:username orangehrm_dbtesting
+2026-01-22 14:21:44 INFO  BaseClass - Applied the border with colorgreento elementElement with name:password
+2026-01-22 14:21:44 INFO  BaseClass - Applied the border with colorgreento elementElement with name:password
+2026-01-22 14:21:44 INFO  BaseClass - Entered the element: Element with name:password DBtesting@123
+2026-01-22 14:21:44 INFO  BaseClass - Applied the border with colorgreento elementElement with text:Login
+2026-01-22 14:21:44 INFO  BaseClass - Applied the border with colorgreento elementElement with text:Login
+2026-01-22 14:21:45 INFO  BaseClass - Element is clicked-->Element with text:Login
+2026-01-22 14:21:53 INFO  BaseClass - Applied the border with colorgreento elementElement with alt:client brand banner
+2026-01-22 14:21:54 INFO  BaseClass - Applied the border with colorgreento elementElement with class:oxd-icon bi-caret-down-fill oxd-userdropdown-icon
+2026-01-22 14:21:55 INFO  BaseClass - Applied the border with colorgreento elementElement with class:oxd-icon bi-caret-down-fill oxd-userdropdown-icon
+2026-01-22 14:21:55 INFO  BaseClass - Element is clicked-->Element with class:oxd-icon bi-caret-down-fill oxd-userdropdown-icon
+2026-01-22 14:21:55 INFO  BaseClass - Applied the border with colorgreento elementElement with text:Logout
+2026-01-22 14:21:55 INFO  BaseClass - Applied the border with colorgreento elementElement with text:Logout
+2026-01-22 14:21:57 INFO  BaseClass - Element is clicked-->Element with text:Logout
+2026-01-22 14:21:59 INFO  BaseClass - Closing WebDriver Instance for Thread: 28
+2026-01-22 14:47:27 INFO  BaseClass - Properties File loaded
+2026-01-22 14:47:34 INFO  BaseClass - ChromeDriver Instance is created
+2026-01-22 14:47:37 INFO  BaseClass - WebDriver initialised and Browser window maximised
+2026-01-22 14:47:37 TRACE BaseClass - This is Trace Message
+2026-01-22 14:47:37 DEBUG BaseClass - This is Debug Message
+2026-01-22 14:47:37 WARN  BaseClass - This is a Warning mesage
+2026-01-22 14:47:37 INFO  BaseClass - WebDriver Instance is Created
+2026-01-22 14:47:37 INFO  BaseClass - Action Driver initialised for Thread30
+2026-01-22 14:47:37 INFO  BaseClass - Applied the border with colorgreento elementElement with name:username
+2026-01-22 14:47:38 INFO  BaseClass - Applied the border with colorgreento elementElement with name:username
+2026-01-22 14:47:38 INFO  BaseClass - Entered the element: Element with name:username orangehrm_dbtesting
+2026-01-22 14:47:38 INFO  BaseClass - Applied the border with colorgreento elementElement with name:password
+2026-01-22 14:47:38 INFO  BaseClass - Applied the border with colorgreento elementElement with name:password
+2026-01-22 14:47:38 INFO  BaseClass - Entered the element: Element with name:password DBtesting@123
+2026-01-22 14:47:39 INFO  BaseClass - Applied the border with colorgreento elementElement with text:Login
+2026-01-22 14:47:39 INFO  BaseClass - Applied the border with colorgreento elementElement with text:Login
+2026-01-22 14:47:39 INFO  BaseClass - Element is clicked-->Element with text:Login
+2026-01-22 14:47:48 INFO  BaseClass - Applied the border with colorgreento elementElement with alt:client brand banner
+2026-01-22 14:47:50 INFO  BaseClass - Applied the border with colorgreento elementElement with class:oxd-icon bi-caret-down-fill oxd-userdropdown-icon
+2026-01-22 14:47:50 INFO  BaseClass - Applied the border with colorgreento elementElement with class:oxd-icon bi-caret-down-fill oxd-userdropdown-icon
+2026-01-22 14:47:51 INFO  BaseClass - Element is clicked-->Element with class:oxd-icon bi-caret-down-fill oxd-userdropdown-icon
+2026-01-22 14:47:51 INFO  BaseClass - Applied the border with colorgreento elementElement with text:Logout
+2026-01-22 14:47:51 INFO  BaseClass - Applied the border with colorgreento elementElement with text:Logout
+2026-01-22 14:47:56 INFO  BaseClass - Element is clicked-->Element with text:Logout
+2026-01-22 14:47:57 INFO  BaseClass - Closing WebDriver Instance for Thread: 30
